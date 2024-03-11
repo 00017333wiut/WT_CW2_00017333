@@ -1,8 +1,9 @@
-const express = require('express');
-const router = express.Router();
-const home_controller = require('../../controllers/users');
+const express = require('express')
+const home_router = require('.')
 
-router.get('/', home_controller.index);
+const router = express.Router()
 
-module.exports = router;
+// registering child routers
+router.use('/', home_router)
+module.exports = router
 
